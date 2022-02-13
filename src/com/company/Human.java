@@ -9,11 +9,11 @@ public class Human extends Animal {
     Phone phone;
 
     public final static String HUMAN_SPECIE = "homo sapiens";
-
+    public final static FoodType HUMAN_FOODTYPE = FoodType.all;
     private Double salary;
 
     Human(Double salary) {
-        super(HUMAN_SPECIE);
+        super(HUMAN_SPECIE,HUMAN_FOODTYPE);
         this.setSalary(salary);
     }
 

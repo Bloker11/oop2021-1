@@ -1,13 +1,15 @@
 package com.company;
 
 import com.company.devices.Car;
+import com.company.devices.OperatingSystem;
 import com.company.devices.Phone;
+import com.company.Animal.FoodType;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        Animal dog = new Animal("dog");
+        Animal dog = new Animal("dog", FoodType.all);
 
         dog.name = "Szarik";
 
@@ -17,15 +19,13 @@ public class Main {
         me.pet = dog;
         me.hashCode();
 
-        me.feed(1.0);
-        System.out.println(me.species);
 
         Phone onePlus = new Phone("onePlus",
                 "8Pro",
                 2.3,
-                "Android");
+                OperatingSystem.Android);
 
-        Phone iPhone6 = new Phone("apple", "6s", 5.0, "iOs");
+        Phone iPhone6 = new Phone("apple", "6s", 5.0, OperatingSystem.iOS);
 
         System.out.println("phone: " + onePlus);
         System.out.println("phone: " + iPhone6);
@@ -34,18 +34,13 @@ public class Main {
 
         onePlus.turnOn();
 
+        dog.feed();
+
         Car fiat = new Car("fiat", "bravo");
         fiat.engineSize = 1.9;
         fiat.fuelType = "disel";
-        System.out.println(fiat.producer);
 
-        dog.feed(1.0);
 
-        Human brother = new Human(1231.2);
-
-        dog.sell(me, brother, 1.0);
-
-        fiat.refill();
 
 
     }

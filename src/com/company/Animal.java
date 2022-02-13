@@ -9,10 +9,15 @@ public class Animal {
     final static Double DEFAULT_WEIGHT = 0.5;
     public final String species;
     private Double weight;
+    public FoodType foodType;
 
-    public Animal(String species) {
+    public enum FoodType{
+        meet,crops,all
+    }
+
+    public Animal(String species, FoodType foodType) {
         this.species = species;
-
+        this.foodType = foodType;
         switch (species) {
             case "dog":
                 this.weight = DEFAULT_DOG_WEIGHT;
@@ -27,6 +32,8 @@ public class Animal {
                 this.weight = DEFAULT_WEIGHT;
         }
 
+
+
     }
 
     void printWeight() {
@@ -34,7 +41,19 @@ public class Animal {
     }
 
     void feed() {
-        this.feed(DEFAULT_FOOD_WEIGHT);
+        switch (this.foodType){
+            case meet -> {weight = weight + weight*0.7;
+                System.out.println(weight);
+            }
+            case crops -> {
+                weight = weight + weight/2;
+                System.out.println(weight);
+            }
+            case all -> {
+                weight = weight + 0.5*weight;
+                System.out.println(weight);
+            }
+        }
     }
 
     void feed(Double foodWeight) {

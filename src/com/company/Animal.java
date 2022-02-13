@@ -46,7 +46,7 @@ public class Animal {
                 System.out.println(weight);
             }
             case crops -> {
-                weight = weight + weight/2;
+                weight = weight + weight*0.3;
                 System.out.println(weight);
             }
             case all -> {

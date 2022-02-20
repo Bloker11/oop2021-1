@@ -68,8 +68,8 @@ public class Main {
 
         Car mustang = new Car("Ford","Mustang");
         Car fiesta = new Car("Ford","Fiesta");
-        Car oven = new Car("Siemens","a57");
-        Car fridge = new Car("Siemens","fridge-55");
+        Phone siemensPhone1 = new Phone("Siemens","a57",9.0,OperatingSystem.Android);
+        Phone siemensPhone2 = new Phone("Siemens","fridge-55",8.2,OperatingSystem.Android);
 
         List<Device> devicesFord = new ArrayList<>();
         devicesFord.add(mustang);
@@ -77,8 +77,8 @@ public class Main {
 
 
         List<Device> devicesSiemens = new ArrayList<>();
-        devicesSiemens.add(oven);
-        devicesSiemens.add(fridge);
+        devicesSiemens.add(siemensPhone1);
+        devicesSiemens.add(siemensPhone2);
 
         Map<String,List> devicesMap = new HashMap<>();
         devicesMap.put("Siemens",devicesSiemens);

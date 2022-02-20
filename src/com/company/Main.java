@@ -13,36 +13,11 @@ public class Main {
 
     public static void main(String[] args) {
 
+        //task 2
+        System.out.println("-------Task 2-------");
         Animal dog = new Animal("dog", FoodType.ALL);
-
-        dog.name = "Szarik";
-
-        Human me = new Human(1000.0);
-        me.firstName = "Kacper";
-        me.lastName = "Warda";
-        me.pet = dog;
-        me.hashCode();
-
-
-        Phone onePlus = new Phone("onePlus",
-                "8Pro",
-                2.3,
-                OperatingSystem.Android);
-
-        Phone iPhone6 = new Phone("apple", "6s", 5.0, OperatingSystem.iOS);
-
-        System.out.println("phone: " + onePlus);
-        System.out.println("phone: " + iPhone6);
-        System.out.println("human: " + me);
-
-
-        onePlus.turnOn();
-
         dog.feed(8.0,FoodType.ALL);
 
-        Car fiat = new Car("fiat", "bravo");
-        fiat.engineSize = 1.9;
-        fiat.fuelType = "disel";
 
         //task 3
         System.out.println("-------Task 3-------");

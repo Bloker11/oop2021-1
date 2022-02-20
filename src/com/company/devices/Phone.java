@@ -5,6 +5,7 @@ import java.util.List;
 public class Phone extends Device implements Refillable {
     private static final String DEFAULT_VERSION = "latest";
     public final Double screenSize;
+    //task1
     public OperatingSystem os;
 
     public static String greetings = "HELLO";

@@ -9,11 +9,9 @@ public class Animal {
     final static Double DEFAULT_WEIGHT = 0.5;
     public final String species;
     private Double weight;
-    public FoodType foodType;
+    public final FoodType foodType;
 
-    public enum FoodType{
-        meet,crops,all
-    }
+
 
     public Animal(String species, FoodType foodType) {
         this.species = species;
@@ -40,20 +38,14 @@ public class Animal {
         System.out.println(weight);
     }
 
-    void feed() {
-        switch (this.foodType){
-            case meet -> {weight = weight + weight*0.7;
-                System.out.println(weight);
-            }
-            case crops -> {
-                weight = weight + weight*0.3;
-                System.out.println(weight);
-            }
-            case all -> {
-                weight = weight + 0.5*weight;
-                System.out.println(weight);
-            }
+    void feed(Double foodWeight, FoodType foodType) {
+        if(this.foodType == foodType){
+            this.weight += (foodWeight * foodType.ratio);
+            System.out.println(this.weight);
+        } else{
+            System.out.println("I don't like it");
         }
+
     }
 
     void feed(Double foodWeight) {

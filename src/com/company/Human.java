@@ -10,10 +10,11 @@ public class Human extends Animal {
 
     public final static String HUMAN_SPECIE = "homo sapiens";
     public final static FoodType HUMAN_FOODTYPE = FoodType.ALL;
+    public final static Double HUMAN_WEIGHT = 80.0;
     private Double salary;
 
     Human(Double salary) {
-        super(HUMAN_SPECIE, HUMAN_FOODTYPE);
+        super(HUMAN_SPECIE, HUMAN_FOODTYPE,HUMAN_WEIGHT);
         this.setSalary(salary);
     }
 

@@ -15,7 +15,7 @@ public class Main {
 
         //task 2
         System.out.println("-------Task 2-------");
-        Animal dog = new Animal("dog", FoodType.ALL);
+        Animal dog = new Animal("dog", FoodType.ALL,10.0);
         dog.feed(8.0,FoodType.ALL);
 
 
@@ -86,6 +86,26 @@ public class Main {
 
         System.out.println(devicesMap.get("Siemens"));
         System.out.println(devicesMap.get("Ford"));
+
+        //task 8, 11
+
+        System.out.println("-------Task 8 and Task 11-------");
+
+        List<Animal> animals = new ArrayList<>();
+        animals.add(new Pets("dog",FoodType.ALL,10.0));
+        animals.add(new Human(2000.0));
+        animals.add(new FarmAnimals("pig",FoodType.ALL,30.0));
+        animals.add(new FarmAnimals("chicken",FoodType.CROPS,4.0));
+        animals.add(new Pets("cat",FoodType.ALL,2.0));
+        animals.add(new Animal("lion",FoodType.MEAT,40.0));
+
+
+
+        animals.sort((animal1, animal2)-> animal2.weight.compareTo(animal1.weight));
+
+        for(int i=0;i < animals.size(); i++){
+            System.out.println(animals.get(i).species+" "+animals.get(i).weight);
+        }
 
     }
 }

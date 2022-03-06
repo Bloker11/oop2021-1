@@ -8,27 +8,28 @@ public class Animal {
     final static Double DEFAULT_ELEPHANT_WEIGHT = 2000.0;
     final static Double DEFAULT_WEIGHT = 0.5;
     public final String species;
-    private Double weight;
+    public Double weight;
     public final FoodType foodType;
 
 
 
-    public Animal(String species, FoodType foodType) {
+    public Animal(String species, FoodType foodType, Double weight) {
         this.species = species;
         this.foodType = foodType;
-        switch (species) {
-            case "dog":
-                this.weight = DEFAULT_DOG_WEIGHT;
-                break;
-            case "cat":
-                this.weight = DEFAULT_CAT_WEIGHT;
-                break;
-            case "elephant":
-                this.weight = DEFAULT_ELEPHANT_WEIGHT;
-                break;
-            default:
-                this.weight = DEFAULT_WEIGHT;
-        }
+        this.weight = weight;
+//        switch (species) {
+//            case "dog":
+//                this.weight = DEFAULT_DOG_WEIGHT;
+//                break;
+//            case "cat":
+//                this.weight = DEFAULT_CAT_WEIGHT;
+//                break;
+//            case "elephant":
+//                this.weight = DEFAULT_ELEPHANT_WEIGHT;
+//                break;
+//            default:
+//                this.weight = DEFAULT_WEIGHT;
+//        }
 
 
 

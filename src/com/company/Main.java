@@ -87,6 +87,11 @@ public class Main {
         System.out.println(devicesMap.get("Siemens"));
         System.out.println(devicesMap.get("Ford"));
 
+        //Task 7
+        System.out.println("-------Task 7-------");
+        Car ford = new Car("Ford","Fiesta");
+        ford.startACar();
+
         //task 8, 11
 
         System.out.println("-------Task 8 and Task 11-------");

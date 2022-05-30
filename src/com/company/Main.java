@@ -11,7 +11,7 @@ import static com.company.Country.*;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         //task 2
         System.out.println("-------Task 2-------");
@@ -106,6 +106,191 @@ public class Main {
         for(int i=0;i < animals.size(); i++){
             System.out.println(animals.get(i).species+" "+animals.get(i).weight);
         }
+
+        //Task 9
+
+      //    System.out.println("-------Task 9-------");
+//        System.out.println("A");
+//        RunnableClass runnableClass = new RunnableClass();
+//
+//        Thread firstThread = new Thread(runnableClass);
+//        Thread secondThread = new Thread(runnableClass);
+//
+//        firstThread.start();
+//        secondThread.start();
+
+       // System.out.println("B");
+        //9B
+
+//        Thread scorpion = new Thread(new Scorpion());
+//        Thread subZero = new Thread(new SubZero());
+//        scorpion.start();
+//        subZero.start();
+
+
+       // 9C and 9D
+
+//        System.out.println("C and D");
+//        RunnableClass scorpion = new RunnableClass();
+//        scorpion.finisher = ()-> System.out.println("Scorpion lights SubZero");
+//
+//        RunnableClass subZero = new RunnableClass();
+//        subZero.finisher = ()-> System.out.println("SubZero froze Scorpions head");
+//
+//
+//        Thread firstThread = new Thread(scorpion);
+//        Thread secondThread = new Thread(subZero);
+//        firstThread.start();
+//        secondThread.start();
+
+        //9E
+//        System.out.println("E");
+//        CallableClass callable = new CallableClass();
+//        ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(2);
+//        Future<Double> value;
+//        try {
+//            value = executor.submit(callable);
+//            System.out.println(value.get());
+//
+//        } catch (Exception e) {
+//            throw new RuntimeException(e);
+//        } finally {
+//            executor.shutdown();
+//        }
+//
+//        //9F
+//        System.out.println("F");
+//        CallableClass scorpionFinisher = new CallableClass();
+//        scorpionFinisher.finisherList.add(() -> System.out.println("Scorpion lights SubZero"));
+//        scorpionFinisher.finisherList.add(() -> System.out.println("Scorpion fatality"));
+//
+//
+//        CallableClass subZeroFinisher = new CallableClass();
+//        subZeroFinisher.finisherList.add(() -> System.out.println("SubZero froze Scorpions head"));
+//        subZeroFinisher.finisherList.add(() -> System.out.println("SubZero fatality"));
+
+
+//        try {
+//            if (value.get() >= 0.5) {
+//                scorpionFinisher.finisherList.get(new Random().nextInt(scorpionFinisher.finisherList.size())).finishHim();
+//
+//            } else {
+//                subZeroFinisher.finisherList.get(new Random().nextInt(subZeroFinisher.finisherList.size())).finishHim();
+//            }
+//        } catch (InterruptedException | ExecutionException e) {
+//            throw new RuntimeException(e);
+//        }
+
+        //Task 10
+        System.out.println("-------Task 10-------");
+
+        ArrayList<Integer> list1 = new ArrayList<>();
+        list1.add(1);
+        list1.add(12);
+        list1.add(13);
+        list1.add(15);
+        ArrayList<Integer> list2 = new ArrayList<>();
+        list2.add(11);
+        list2.add(15);
+        list2.add(133);
+        list2.add(18);
+        list2.add(19);
+        list2.add(20);
+        ArrayList<Integer> list3 = new ArrayList<>();
+        list3.add(122);
+        list3.add(183);
+        ArrayList<Integer> list4 = new ArrayList<>();
+        list4.add(116);
+        list4.add(189);
+        list4.add(2);
+
+
+        long start;
+        long end;
+        long time;
+
+        CallableSorter callableSorter1 = new CallableSorter(list1);
+        CallableSorter callableSorter2 = new CallableSorter(list2);
+        CallableSorter callableSorter3 = new CallableSorter(list3);
+        CallableSorter callableSorter4 = new CallableSorter(list4);
+
+        // one by one
+//        start = Calendar.getInstance().getTimeInMillis();
+//        callableSorter1.call();
+//        end = Calendar.getInstance().getTimeInMillis();
+//        time = end - start;
+//        System.out.println("Time it took: "+time+" ms");
+//
+//        start = Calendar.getInstance().getTimeInMillis();
+
+//        callableSorter2.call();
+//        end = Calendar.getInstance().getTimeInMillis();
+//        time = end - start;
+//        System.out.println("Time it took: "+time+" ms");
+//
+//        start = Calendar.getInstance().getTimeInMillis();
+
+//        callableSorter3.call();
+//        end = Calendar.getInstance().getTimeInMillis();
+//        time = end - start;
+//        System.out.println("Time it took: "+time+" ms");
+//
+//        start = Calendar.getInstance().getTimeInMillis();
+
+//        callableSorter4.call();
+//        end = Calendar.getInstance().getTimeInMillis();
+//        time = end - start;
+//        System.out.println("Time it took: "+time+" ms");
+
+        //all at the same time
+        start = Calendar.getInstance().getTimeInMillis();
+        callableSorter1.call();
+        callableSorter2.call();
+        callableSorter3.call();
+        callableSorter4.call();
+        end = Calendar.getInstance().getTimeInMillis();
+        time = end - start;
+        System.out.println("Time it took: "+time+" ms");
+
+        //Task 15
+        System.out.println("-------Task 15-------");
+        SuperNumber<Double> num1 = new SuperNumber<>(10.0);
+        SuperNumber<Integer> num2 = new SuperNumber<>(11);
+
+        System.out.println("Double as Double: "+num1.returnDouble());
+        System.out.println("Double as int: "+num1.returnInt());
+        System.out.println("int as Double: "+num2.returnDouble());
+        System.out.println("int as int: "+num2.returnInt());
+        System.out.println("Type of first number: ");
+        num1.type();
+        System.out.println("Type of second number: ");
+        num2.type();
+
+        System.out.println(num1.checkIfDoubleInt());
+        System.out.println(num1.checkWithOtherInt(num2));
+        System.out.println(num1.checkIfOtherDouble(num2));
+
+        //Task 16
+        System.out.println("-------Task 16-------");
+        Container<Integer> num = new Container<>();
+        num.add(22);
+        num.add(33);
+        num.add(44);
+        System.out.println(num.changes);
+
+        //Task 17
+        System.out.println("-------Task 17-------");
+        ContainerWithMemory<Integer> cwm = new ContainerWithMemory();
+        cwm.add(1);
+        cwm.add(2);
+        cwm.add(3);
+        System.out.println(cwm.version.get(1));
+        System.out.println(cwm.version.get(2));
+        System.out.println(cwm.version.get(3));
+        cwm.remove(2);
+        System.out.println(cwm.version.get(4));
+        cwm.restoreVersion(2);
+        System.out.println(cwm.memory);
 
     }
 }
